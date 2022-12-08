@@ -1,0 +1,54 @@
+<h1 class='mt-4'>
+  Search form
+</h1>
+<form method='get' action='/news/search' class='mt-4'>
+  <div class='mb-3'>
+    <label for='search-input-1' class='form-label'>
+      Keyword 1
+    </label>
+    <input name='wkf' type='text' class='form-control' id='search-input-1' />
+  </div>
+
+  <div class='mb-3'>
+    <label for='search-input-2' class='form-label'>
+      Keyword 2
+    </label>
+    <input name='kws' type='text' class='form-control' id='search-input-2' />
+  </div>
+
+  <div class='mb-3 form-check'>
+    <input name='isSensitive' type='checkbox' class='form-check-input' id='isCaseSensitiveCheck' />
+    <label class='form-check-label' for='isCaseSensitiveCheck'>
+      Case sensitive
+    </label>
+  </div>
+  <button type='submit' class='btn btn-primary'>
+    Search by query
+  </button>
+</form>
+<hr />
+<form method='post' action='/news' class='mt-4'>
+  <div class='mb-3'>
+    <label for='search-input-1' class='form-label'>
+      Keyword 1
+    </label>
+    <input name='wkf' type='text' class='form-control' id='search-input-1' />
+  </div>
+
+  <div class='mb-3'>
+    <label for='search-input-2' class='form-label'>
+      Keyword 2
+    </label>
+    <input name='kws' type='text' class='form-control' id='search-input-2' />
+  </div>
+
+  <div class='mb-3 form-check'>
+    <input name='isSensitive' type='checkbox' class='form-check-input' id='isCaseSensitiveCheck' />
+    <label class='form-check-label' for='isCaseSensitiveCheck'>
+      Case sensitive
+    </label>
+  </div>
+  <button type='submit' class='btn btn-primary'>
+    Search by body
+  </button>
+</form>
