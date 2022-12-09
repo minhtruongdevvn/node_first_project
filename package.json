@@ -12,7 +12,11 @@
     "test": "jest",
     "test:unit": "jest unit",
     "test:int": "jest int",
-    "test:coverage": "jest --coverage"
+    "test:coverage": "jest --coverage",
+    "rule": "prettier --write src/**/*.{ts,json,scss}"
+  },
+  "lint-staged": {
+    "src/**/*.{ts,json,scss}": "npm run rule"
   },
   "repository": {
     "type": "git",
