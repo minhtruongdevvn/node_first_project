@@ -4,6 +4,7 @@
 ### Node ###
 # Dev resources
 public/autogen/
+.vscode/extensions.json
 
 # Logs
 logs

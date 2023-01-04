@@ -4,7 +4,7 @@
 
 - Setup nodejs - backend environment:
   - **typescript** -- primary programing language
-  - **node-scss** -- auto-watch changes in .scss files
+  - **node-sass** -- auto-watch changes in .scss files
   - **nodemon** -- auto-watch changes in .ts files
   - **eslint + prettier** -- coding styles and standards
   - **jest** -- testing library
@@ -13,7 +13,10 @@
   - **express-handlebars** -- template engine
   - **morgan** -- request logger middlewares
   - **bootstrap** -- front-end kits
-  - **mongodb** -- database
+  - **lint-staged** -- apply command with staged changes
+  - **husky** -- git hooks
+  - **mongoose** -- object model driver
     <br>
 - Build a simple static web-application using nodejs:
   - MVC pattern
+  - Mongo DB

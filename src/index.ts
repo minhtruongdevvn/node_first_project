@@ -1,3 +1,4 @@
+import { connectDb } from '@src/config/db';
 import dotenv from 'dotenv';
 import express, { Express } from 'express';
 import { engine } from 'express-handlebars';
@@ -6,6 +7,7 @@ import mapRoutes from './routes';
 
 dotenv.config();
 
+connectDb();
 const app: Express = express();
 
 const port = process.env.PORT;
@@ -27,7 +29,7 @@ app.engine(
   })
 );
 app.set('view engine', '.hbs');
-app.set('views', path.join(__dirname, 'resources/views'));
+app.set('views', path.join(__dirname, 'resources', 'views'));
 
 /* Mapping route */
 mapRoutes(app);
