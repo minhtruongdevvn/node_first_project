@@ -17,7 +17,7 @@ const port = process.env.PORT;
 // app.use(morgan('combined'));
 // handle static files
 app.use(express.static(path.join(`${__dirname}/../`, 'public')));
-// handle body data
+// /handle body data
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
