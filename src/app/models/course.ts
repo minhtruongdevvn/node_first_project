@@ -8,6 +8,8 @@ interface ICourse {
   slug?: string;
 }
 
+// we can add mongoose-delete package to support soft delete
+
 const courseSchema = new Schema<ICourse>({
   name: { type: String, required: true },
   description: { type: String, required: true, maxlength: 600 },
