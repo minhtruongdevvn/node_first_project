@@ -1,4 +1,4 @@
-import SiteController from '@src/app/controllers/SiteController';
+import SiteController from '@/app/controllers/SiteController';
 import { Router } from 'express';
 
 export default Router().get('/', SiteController.index).get('/search', SiteController.search);

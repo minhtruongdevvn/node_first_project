@@ -1,4 +1,4 @@
-import NewController from '@src/app/controllers/NewController';
+import NewController from '@/app/controllers/NewController';
 import { Router } from 'express';
 
 export default Router()

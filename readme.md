@@ -19,4 +19,4 @@
     <br>
 - Build a simple static web-application using nodejs:
   - MVC pattern
-  - Mongo DB
+  - Mongo DB (provided by docker container)

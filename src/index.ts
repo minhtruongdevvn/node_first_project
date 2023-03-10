@@ -1,4 +1,4 @@
-import { connectDb } from '@src/config/db';
+import { connectDb } from '@/config/db';
 import dotenv from 'dotenv';
 import express, { Express } from 'express';
 import { engine } from 'express-handlebars';

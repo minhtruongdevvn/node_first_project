@@ -1,4 +1,4 @@
-import { Course, ICourse } from '@src/models/course';
+import { Course, ICourse } from '@/models/course';
 import { connect } from 'mongoose';
 
 async function connectDb() {

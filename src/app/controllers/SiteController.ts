@@ -1,4 +1,4 @@
-import { Course } from '@src/models/course';
+import { Course } from '@/models/course';
 import { NextFunction, Request, Response } from 'express';
 
 class SiteController {
