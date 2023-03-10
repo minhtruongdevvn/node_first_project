@@ -1,12 +1,14 @@
-import { Course } from '@/models/course';
+import { Course } from '@/app/models/course';
+import mongoUtils from '@/utils/mongo.utils';
 import { NextFunction, Request, Response } from 'express';
 
 class SiteController {
   index(req: Request, res: Response, next: NextFunction) {
     Course.find({})
       .then(coursesDoc => {
-        const courses = coursesDoc.map(courseDoc => courseDoc.toObject());
-        res.render('home', { courses });
+        res.render('home', {
+          courses: mongoUtils.documentsToObject(coursesDoc),
+        });
       })
       .catch(next);
   }

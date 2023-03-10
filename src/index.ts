@@ -2,6 +2,7 @@ import { connectDb } from '@/config/db';
 import dotenv from 'dotenv';
 import express, { Express } from 'express';
 import { engine } from 'express-handlebars';
+import methodOverride from 'method-override';
 import path from 'path';
 import mapRoutes from './routes';
 
@@ -20,6 +21,7 @@ app.use(express.static(path.join(`${__dirname}/../`, 'public')));
 // handle body data
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
+app.use(methodOverride('_method'));
 
 /* Template engine */
 app.engine(

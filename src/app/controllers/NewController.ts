@@ -1,4 +1,4 @@
-import { SearchQuery } from '@/models/search';
+import { SearchQuery } from '@/app/models/search';
 import { Request, Response } from 'express';
 
 class NewController {
