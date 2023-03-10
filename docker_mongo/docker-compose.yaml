@@ -1,0 +1,31 @@
+# docker compose -f docker-compose.yaml up
+# we dont need specify the .yaml file because it is default
+# docker exec -it {containerId} bash --> access the cmd of the container
+# in order to use the db by connection string we must create sub user:
+# db.createUser(
+#   {
+#     user: "user",
+#     pwd:  passwordPrompt(),
+#     roles: [ { role: "readWrite", db: "node_first_db" } ]
+#   }
+# )
+version: “3.8”
+services:
+  mongo:
+    image: mongo
+    restart: always
+    ports:
+      - 27017:27017
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: pass
+
+  mongo-express:
+    image: mongo-express
+    restart: always
+    ports:
+      - 8081:8081
+    environment:
+      ME_CONFIG_MONGODB_ADMINUSERNAME: root
+      ME_CONFIG_MONGODB_ADMINPASSWORD: pass
+      ME_CONFIG_MONGODB_URL: mongodb://root:pass@mongo:27017/

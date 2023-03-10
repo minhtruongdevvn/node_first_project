@@ -2,8 +2,9 @@ import { Course, ICourse } from '@src/models/course';
 import { connect } from 'mongoose';
 
 async function connectDb() {
+  //localhost:8081/db/node_first_db/Course
   try {
-    await connect('mongodb://127.0.0.1:27017/first_node');
+    await connect('mongodb://user:pass@localhost:27017/node_first_db');
     console.log('db connected');
   } catch (error) {
     console.log('failed to connect db', error);
