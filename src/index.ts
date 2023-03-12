@@ -1,6 +1,6 @@
 import { connectDb } from '@/config/db';
 import dotenv from 'dotenv';
-import express, { Express } from 'express';
+import express, { Express, Request } from 'express';
 import { engine } from 'express-handlebars';
 import methodOverride from 'method-override';
 import path from 'path';
@@ -22,12 +22,30 @@ app.use(express.static(path.join(`${__dirname}/../`, 'public')));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(methodOverride('_method'));
+app.use((req: Request, res, next) => {
+  if (req.query.sort) {
+    const [name, type]: [string, string] = (req.query.sort as string).split(
+      ';'
+    ) as [string, string];
+    if (['asc', 'desc'].includes(type)) {
+      req._sort = {
+        name,
+        type: type == 'asc' ? 1 : -1,
+      };
+    }
+  }
+  next();
+});
 
 /* Template engine */
 app.engine(
   '.hbs',
   engine({
     extname: '.hbs',
+    helpers: {
+      getSortType: (sortType?: number) =>
+        sortType ? (sortType == 1 ? 'desc' : 'asc') : 'asc',
+    },
   })
 );
 app.set('view engine', '.hbs');

@@ -5,7 +5,9 @@ import { NextFunction, Request, Response } from 'express';
 class SiteController {
   index(req: Request, res: Response, next: NextFunction) {
     Course.find({})
+      .sortable(req._sort)
       .then(coursesDoc => {
+        req._sort && (res.locals.sort = req._sort);
         res.render('home', {
           courses: mongoUtils.documentsToObject(coursesDoc),
         });

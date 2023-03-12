@@ -1,5 +1,5 @@
 <div class='mt-5'>
-  <div class='row'>
+  <div class='row mb-5'>
     {{#each courses}}
       <div class='col-sm-6 col-lg-4 d-flex align-items-center justify-content-center'>
         <div class='card mt-2' style='width: 18rem;'>
@@ -23,4 +23,10 @@
       </p>
     {{/each}}
   </div>
+  <a href='?sort=name;{{getSortType sort.type}}' class='btn btn-primary'>
+    Sort by name
+  </a>
+  <a href='?sort=description;{{getSortType sort.type}}' class='btn btn-primary'>
+    Sort by description
+  </a>
 </div>
